@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post History</title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+
+<div class="overflow-x-auto">
+  <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+    <thead class="ltr:text-left rtl:text-right">
+      <tr>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Date
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Negative Thought and Situation
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Cognitive Distortions Exhibited
+        </th>
+        <th class="px-4 py-2"></th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+  <% for(var i=0; i<posts.length; i++) {%>
+      <tr class="<%= posts[i].bookmark ? 'bg-indigo-300' : '' %>">
+        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          <%= posts[i].formattedDate %>
+        </td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700"><%=posts[i].negativeThought %></td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+          <ul>
+          <% for(var j=0; j<posts[i].distortion.length; j++) {%>
+            <li>
+              <%=posts[i].distortion[j] %>
+            </li>
+          <% } %>
+          </ul>
+        </td>
+        <td class="whitespace-nowrap px-4 py-2">
+          <a
+            href="/post/<%= posts[i]._id%>"
+            class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">
+            Read more
+          </a>
+        </td>
+      </tr>
+      <% } %>
+
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+ 

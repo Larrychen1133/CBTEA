@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/output.css">
+  <title>Profile</title>
+</head>
+<body class="h-full bg-gray-100">
+
+<section class="bg-gray-100 h-full">
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div class="lg:col-span-2 lg:py-12">
+       
+        <div class="mt-8">
+          <span class="text-4xl font-bold">
+            Hello, <%= user.userName %>
+          </span>
+
+          <p class="text-3xl mt-10 not-italic">
+            Thank you for being vulnerable :)
+          </p>
+
+          <button class="mt-10 inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+            <a href="/feed">My previous posts</a>
+            </button>
+
+
+
+          <button class="mt-10 inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+            <a href="/logout">Logout</a>
+            </button>
+        </div>
+      </div>
+
+      <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+        <form action="/post/createPost" method="POST" class="space-y-4">
+          
+            <label class="form-label" for="negativeThought">Describe the situation and your negative thoughts</label>
+            <textarea
+            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+            placeholder="Negative Thought"
+            rows="8"
+            name="negativeThought"
+            id="negativeThought"
+          ></textarea>
+
+          
+
+          <h3>Choose the cognitive distortions that apply (can choose than one option)</h3>
+          <div class="grid grid-cols-2 gap-4 text-center ">
+            <div>
+              <input
+                class="peer sr-only"
+                id="catastrophizing"
+                type="checkbox"
+                name="distortion[]"
+                value="catastrophizing"
+              />
+
+              <label
+                for="catastrophizing"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm"> Catastrophizing</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="allOrNothingThinking"
+                type="checkbox"
+                name="distortion[]"
+                value="all or nothing thinking"
+              />
+
+              <label
+                for="allOrNothingThinking"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm">All or Nothing Thinking</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="emotionalReasoning"
+                type="checkbox"
+                name="distortion[]"
+                value="emotional reasoning"
+              />
+
+              <label
+                for="emotionalReasoning"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm"> Emotional Reasoning</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="magnifyingNegative"
+                type="checkbox"
+                name="distortion[]"
+                value="magnifying the negative"
+              />
+
+              <label
+                for="magnifyingNegative"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm"> Magnifying the Negative</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="minimizePositive"
+                type="checkbox"
+                name="distortion[]"
+                value="minimizing the positve"
+              />
+
+              <label
+                for="minimizePositive"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm"> Minimizing the Positive</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="mindReading"
+                type="checkbox"
+                name="distortion[]"
+                value="Mind-Reading"
+              />
+
+              <label
+                for="mindReading"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm"> Mind-Reading</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="fortuneTelling"
+                type="checkbox"
+                name="distortion[]"
+                value="fortune-telling"
+              />
+
+              <label
+                for="fortuneTelling"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm"> Fortune-Telling</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="selfBlaming"
+                type="checkbox"
+                name="distortion[]"
+                value="self-blaming"
+              />
+
+              <label
+                for="selfBlaming"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm">
+                  Self-Blaming</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="othersBlaming"
+                type="checkbox"
+                name="distortion[]"
+                value="others-blaming"
+              />
+
+              <label
+                for="othersBlaming"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm">
+                  Others-Blaming</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="overgeneralization"
+                type="checkbox"
+                name="distortion[]"
+                value="overgeneralization"
+              />
+
+              <label
+                for="overgeneralization"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm">
+                  Overgeneralization</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="labeling"
+                type="checkbox"
+                name="distortion[]"
+                value="labeling"
+              />
+
+              <label
+                for="labeling"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm">
+                  Labeling</span>
+              </label>
+            </div>
+
+            <div>
+              <input
+                class="peer sr-only"
+                id="shouldMust"
+                type="checkbox"
+                name="distortion[]"
+                value="should/must statements"
+              />
+
+              <label
+                for="shouldMust"
+                class="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                tabindex="0"
+              >
+                <span class="text-sm">
+                  Should/Must statements</span>
+              </label>
+            </div>
+
+
+          </div>
+
+          <div>
+            <label class="form-label" for="challengs">What is the evidence that refutes your negative thoughts? </label>
+
+            <textarea
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Challenge Your Negative Thoughts"
+              rows="8"
+              id="challenge"
+              name="challenge"
+            ></textarea>
+          </div>
+
+          <div>
+
+            <label class="form-label" for="rationalThought">After looking at the evidence, come up with a more realistic thought.</label>
+
+            <textarea
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="More Rational Thought"
+              rows="8"
+              id="rationalThought"
+              name="rationalThought"
+            ></textarea>
+          </div>
+
+          <div class="mt-4">
+            <button
+              type="submit"
+              class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+            >
+              Add a Post
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
