@@ -20,7 +20,7 @@ CBTEA is a full-stack CRUD web application designed for Cognitive Behavioral The
 - **Database**: MongoDB
 - **Frontend Templating**: EJS
 - **Authentication**: Passport.js
-- 
+  
 ## Getting Started 🚀
 
 ### Prerequisites
@@ -33,35 +33,35 @@ Ensure you have the following installed:
 ### Installation & Setup
 
 1. **Clone the repository**:
-\```bash
+```bash
 git clone https://github.com/YourGitHubUsername/CBTEA.git
-\```
+```
 
 2. **Navigate to the project directory**:
-\```bash
+```bash
 cd CBTEA
-\```
+```
 
 3. **Install dependencies**:
-\```bash
+```bash
 npm install
-\```
+```
 
 4. **Setup environment variables**:
 
 Create a `.env` file in the root directory and set up your environment variables:
 
-\```
+```
 DB_STRING=your_mongodb_connection_string
 SECRET=your_secret_key
-\```
+```
 
 🔐 For the `SECRET`, consider generating a random string. This secret is crucial for session security.
 
 5. **Run the application**:
-\```bash
+```bash
 npm start
-\```
+```
 
 Open your browser and navigate to `http://localhost:YOUR_PORT` to access CBTEA.
 
