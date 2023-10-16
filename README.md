@@ -34,7 +34,7 @@ Ensure you have the following installed:
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/YourGitHubUsername/cbtea.git
+git clone https://github.com/Larrychen1133/cbtea.git
 ```
 
 2. **Navigate to the project directory**:
