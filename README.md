@@ -39,7 +39,7 @@ git clone https://github.com/YourGitHubUsername/CBTEA.git
 
 2. **Navigate to the project directory**:
 ```bash
-cd CBTEA
+cd cbtea
 ```
 
 3. **Install dependencies**:
