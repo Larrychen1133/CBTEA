@@ -65,6 +65,13 @@ npm start
 
 Open your browser and navigate to `http://localhost:YOUR_PORT` to access CBTEA.
 
+6. **Optimization & Future Work**:
+
+While the current design is user-friendly and intuitive, I am not a designer so I quickly integrated some Tailwind CSS to make the website not look fully bare.
+I aim to further polish the user interface when I have more time. I want to fully integrate Tailwind CSS to provide a better looking UI to potential users. 
+
+
+
 ## Contact 📞
 
 Larry Chen - Lc3718@columbia.edu
