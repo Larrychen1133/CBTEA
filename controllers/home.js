@@ -5,9 +5,6 @@ module.exports = {
     res.render("index.ejs");
   },
   getAbout: (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'about.html'));
+    res.render("about.ejs")
   }, 
-  getContact: (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'contact.html'))
-  }
  };

@@ -16,7 +16,7 @@
           Date
         </th>
         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-          Negative Thought and Situation
+          Negative Thought & Situation
         </th>
         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
           Cognitive Distortions Exhibited
@@ -26,7 +26,7 @@
     </thead>
     <tbody class="divide-y divide-gray-200">
   <% for(var i=0; i<posts.length; i++) {%>
-      <tr class="<%= posts[i].bookmark ? 'bg-indigo-300' : '' %>">
+      <tr class="<%= posts[i].bookmark ? 'bg-blue-300' : '' %>">
         <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
           <%= posts[i].formattedDate %>
         </td>
@@ -43,7 +43,7 @@
         <td class="whitespace-nowrap px-4 py-2">
           <a
             href="/post/<%= posts[i]._id%>"
-            class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">
+            class="inline-block rounded bg-blue-400 px-4 py-2 text-xs font-medium text-white hover:bg-blue-300">
             Read more
           </a>
         </td>
