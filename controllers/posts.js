@@ -12,10 +12,10 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      const posts = await Post.find({ user: req.user._id }).sort({ createdAt: "desc" }).lean();
       posts.forEach(post => {
         post.formattedDate = moment(post.createdAt).format('MM/DD/YYYY');
-    });
+      });
       res.render("feed.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
