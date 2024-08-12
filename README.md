@@ -49,7 +49,7 @@ npm install
 
 4. **Setup environment variables**:
 
-Create a `.env` file in the root directory and set up your environment variables:
+Create a `.env` file in the config directory and set up your environment variables:
 
 ```
 DB_STRING=your_mongodb_connection_string
